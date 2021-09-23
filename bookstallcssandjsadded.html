@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Book sale</title>
+
+     <!--Font Awsome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <style>
+    *{
+	  box-sizing: border-box;
+    font-weight: bold;
+		}
+
+    .main{
+    background-color:seagreen;
+    border-style: solid;
+    }
+
+   .flex{
+  	display: flex;
+    flex-wrap: wrap;
+    }	
+
+    .title{
+    background-color:seagreen;
+    }
+
+    .first{
+    padding: 15px;
+    background-color: azure;
+    flex: 55%;
+    }
+
+    .second{
+    background-color: antiquewhite;
+    padding: 15px;
+    flex: 45%;
+    }
+
+    .head{
+    color: antiquewhite;
+    text-shadow: 5px 5px 2px black;
+    word-spacing: 10px;
+    letter-spacing: 10px;
+    }
+
+    .quote{
+    text-shadow: 1px 1px brown;
+    word-spacing: 3px;
+    letter-spacing: 2px;
+    }
+
+    .image{
+    padding: 20px;
+    }
+   
+   .feedback{
+    padding: 15px;
+    background-color: rgb(236, 235, 184);
+    }
+    
+    .icon{
+      align: right;
+      height: 100px;
+      width: 100px;
+    }
+
+    </style>
+
+
+
+
+ <script type="text/javascript">
+
+   function bigImg(x) {
+  x.style.height = "250px";
+  x.style.width = "350px";
+}
+
+function normalImg(x) {
+  x.style.height = "200px";
+  x.style.width = "300px";
+}
+
+  function validateform() {
+        var name = document.forms["bookForm"]["name"];
+        var aname = document.forms["bookForm"]["aname"];
+        var bname = document.forms["bookForm"]["bname"];
+        var email = document.forms["bookForm"]["email"];
+        var mob = document.forms["bookForm"]["mob"];
+        var age = document.forms["bookForm"]["age"];
+        var price = document.forms["bookForm"]["price"];
+        var date = document.forms["bookForm"]["date"];
+        
+        if (name.value == "") {
+          window.alert("Please enter your name.");
+          name.focus();
+          return false;
+        }
+
+        if (age.value == "") {
+          window.alert(
+          "Please enter your age.");
+          age.focus();
+          return false;
+        }
+
+        if ((age.value < 5) || (age.value > 99)){
+          window.alert(
+          "Please enter valid age.");
+          age.focus();
+          return false;
+        }
+
+         if (mob.value == "" || isNaN(mob.value) || mob.value.length != 10 ) {
+          alert("Please enter valid mobile number.");
+          mob.focus();
+          return false;
+        }
+
+         if (email.value == "") {
+          window.alert(
+          "Please enter a valid e-mail address.");
+          email.focus();
+          return false;
+        }
+
+
+        if (aname.value == "") {
+          window.alert("Please enter author's name.");
+          name.focus();
+          return false;
+        }
+
+        if (bname.value == "") {
+          window.alert("Please enter book name.");
+          name.focus();
+          return false;
+        }
+        
+        if (price.value == "") {
+          window.alert(
+          "Please enter price.");
+          price.focus();
+          return false;
+        }
+
+        if (price.value < 5) {
+          window.alert(
+          "Please enter valid price.");
+          price.focus();
+          return false;
+        }
+         
+        if (date.value == "") {
+          window.alert("Please enter date of purchase.");
+          date.focus();
+          return false;
+        }
+        return true;
+      }
+ </script>
+  </head>
+
+
+
+
+  <body>
+    
+
+
+
+
+  <div class="main">
+
+
+
+
+  <!--flex includes class first and class second-->
+<form action="#" name="bookForm" onsubmit="return(validateform());">
+<form action="http://localhost/phpscript/details.php" method="post" name="bookForm" onsubmit="return(validateform());">
+<div class="flex">
+
+  <!--displayed image and js-->
+ 
+  <!--form to enter user details-->
+  
+  <p><strong>Name:</strong><input type ="text" name="name"></p>
+  <p id="age"><strong>Age:</strong><input type ="number" value = "" name="age"> <strong>Mob:</strong><input type="tel" name="mob"></p>
+  <p><strong>Gender:</strong> Male<input type ="radio" name = "gender"> 
+  Female:<input type = "radio" name = "gender"></p>
+  <p><strong>email:</strong><input type="email" name="email"></p>
+  <p>Name:<input type ="text" name="name"></p>
+  <p id="age">Age:<input type ="number" value = "" name="age"> <strong>Mob:</strong><input type="tel" name="mob"></p>
+  <p>Gender: Male<input type ="radio" name = "gender" value="Male"> 
+  Female:<input type = "radio" name = "gender" value="Female"></p>
+  <p>email:<input type="email" name="email"></p>
+  </div> <!--close tag of class first div-->
+
+  
+  <!--form to enter book detais-->
+  <div class="second">
+  <p><strong> Book name:</strong><input type ="text"  name="bname" ></p><p><strong>Author Name:</strong><input type ="text" name="aname" ></p>
+  <p><strong>Price:</strong><input type="number" name="price"></p>
+  <p><strong>Language:</strong>
+  <p> Book name:<input type ="text"  name="bname" ></p><p><strong>Author Name:</strong><input type ="text" name="aname" ></p>
+  <p>Price:<input type="number" name="price"></p>
+  <p>Language:
+    <select type="text" value="" name="lang">
+      <option>Malayalam</option>
+      <option selected>English</option>
+      <option>Kannada</option>
+      <option>Others</option>
+    </select>
+  <strong>Date :</strong><input type="date" name="date"</p>
+  <p><strong>Book category:</strong> <input type="text"></p>
+  Date of purchase :<input type="date" name="date"</p>
+  <p>Book category: <input type="text" name="cat"></p>
+  </div> <!--close tag of class second div-->
+
+
+</div> <!--close tag of class flex div-->
+
+    <!--feedback class -->
+    <div class="feedback" id="feedback"> 
+    <div class="feedback" id="feedback" value="nil" name="feed"> 
+    <p><ins>Feedback :</ins></p>
+    <textarea></textarea>
+    <p>Provided details are correct: <input type ="checkbox" checked></p>
